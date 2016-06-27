@@ -1,0 +1,307 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2016-06-23T03:19:37.371Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Event object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2016-06-23T03:34:37.882Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2016-06-23T03:34:48.299Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2016-06-23T03:34:53.532Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2016-06-23T03:34:59.446Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2016-06-23T03:35:03.854Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2016-06-23T03:35:09.269Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2016-06-23T03:35:14.729Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "AdmissionType object",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2016-06-23T15:08:23.563Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "General",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2016-06-23T15:08:38.792Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "General",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2016-06-23T18:50:47.432Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Moonshine Rhythm Club Venue",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2016-06-23T18:51:05.132Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Moonshine Rhythm Club Band",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2016-06-23T18:51:27.038Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Moonshine Rhythm Club Teachers",
+    "action_flag": 1,
+    "change_message": "Added."
+  }
+},
+{
+  "model": "event.event",
+  "pk": 1,
+  "fields": {
+    "name": "Moonshine Rhythm Club",
+    "date": "2016-07-16T19:00:00Z"
+  }
+},
+{
+  "model": "event.event",
+  "pk": 2,
+  "fields": {
+    "name": "Old City Buskers",
+    "date": "2016-07-19T00:00:00Z"
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 2,
+  "fields": {
+    "name": 1,
+    "type": "Student",
+    "price": "7.00",
+    "count": 294
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 3,
+  "fields": {
+    "name": 1,
+    "type": "Military",
+    "price": "7.00",
+    "count": 41
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 4,
+  "fields": {
+    "name": 1,
+    "type": "Volunteer",
+    "price": "0.00",
+    "count": 32
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 5,
+  "fields": {
+    "name": 1,
+    "type": "DJ",
+    "price": "0.00",
+    "count": 7
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 6,
+  "fields": {
+    "name": 1,
+    "type": "Teacher",
+    "price": "0.00",
+    "count": 5
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 7,
+  "fields": {
+    "name": 1,
+    "type": "Free Pass",
+    "price": "0.00",
+    "count": 13
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 8,
+  "fields": {
+    "name": 1,
+    "type": "General",
+    "price": "10.00",
+    "count": 289
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 9,
+  "fields": {
+    "name": 2,
+    "type": "General",
+    "price": "10.00",
+    "count": 18
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 10,
+  "fields": {
+    "name": 2,
+    "type": "General",
+    "price": "10.00",
+    "count": 21
+  }
+},
+{
+  "model": "admission.expenses",
+  "pk": 1,
+  "fields": {
+    "name": 1,
+    "type": "Venue",
+    "notes": "Flying Monkey",
+    "cost": "0.00"
+  }
+},
+{
+  "model": "admission.expenses",
+  "pk": 2,
+  "fields": {
+    "name": 1,
+    "type": "Band",
+    "notes": "Mooneshine Rhythm Club",
+    "cost": "800.00"
+  }
+},
+{
+  "model": "admission.expenses",
+  "pk": 3,
+  "fields": {
+    "name": 1,
+    "type": "Teachers",
+    "notes": "Teachers",
+    "cost": "0.00"
+  }
+}
+]

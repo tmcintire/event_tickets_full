@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static 'assets/js/jquery.confirm.min.js' %}"></script>
+<h1 class="text-center">{{ event }}</h1>
+
+<button><a href="/volunteers/delete/{{ vol.id }}/" style="color:black">Delete Volunteer</a></button>
+
+<table class="table admission-table">
+    <thead>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Modify</th>
+        <th>Count</th>
+        <th>Total</th>
+    </thead>
+    <tbody>
+
+        {% for i in types %}
+    <tr>
+        <td class="type">{{ i.type }}</td>
+        <td class="price">{{ i.price }}</td>
+        <td><button class="btn btn-primary add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
+            <i class="fa fa-plus -square fa-2x"></i></button>
+            <button class="confirm btn btn-danger delete-btn" data-typeid="{{ i.id }}" id="delete-{{ i.id }}">
+                <i class="fa fa-minus-square fa-2x"></i></button>
+        </td>
+        <td id="count-{{ i.id }}">{{ i.ad_type_total }}</td>
+        <td id="total-{{ i.id }}">
+            {% if i.ad_type_total_price = None %}
+                $0.00
+            {% else %}
+                ${{ i.ad_type_total_price }}
+            {% endif %}
+        </td>
+    </tr>
+
+    {% endfor %}
+
+        {{ count }}
+        <tr>
+            <td colspan="3"><strong>Totals</strong></td>
+            <td id="attendance">{{ event.count }}</td>
+            <td id="total">${{ total_revenue }}</td>
+
+        </tr>
+    </tbody>
+</table>
+<h1 class="text-center">Expenses</h1>
+<table class="table expenses-table">
+    <thead>
+        <th>Name</th>
+        <th>Notes</th>
+        <th>Percentage</th>
+        <th>Cost</th>
+    </thead>
+    <tbody>
+
+    {% for i in event.expenses %}
+    <tr>
+        <td><a href="{% url 'admission:edit_expense' i.id %}">{{ i.type }}</a></td>
+        <td>{{ i.notes }}</td>
+        <td>{% if i.percent > 0 %} {{ i.percent }}% {% else %} - {% endif %}</td>
+        <td>${{ i.cost }}</td>
+    {% endfor %}
+    </tr>
+    <tr>
+        <td colspan="3">Total Expenses</td>
+        <td>${{ event.total_expenses }}</td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<h1 class="text-center">Cash Box</h1>
+<table class="table cashbox-table">
+    <thead>
+        <tr>
+            <th style="width: 50%">Beginning Cash</th>
+            <th>Ending Cash</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>{{ cash }}</td>
+            <td>{{ cash_remaining }}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+<script>
+    $(".add-btn").click(function() {
+        typeid = $(this).attr("data-typeid");
+        eventid = "{{ event.id }}"
+
+        console.log(typeid)
+        $.get('/admission/' + eventid + '/addone/' + typeid, { admission_type: typeid }, function(data) {
+            $('#count-' + typeid).html(data['count']);
+            $('#total-' + typeid).html("$" + data['total']);
+            $('#total').html("$" + data['tickets_total']);
+            $('#attendance').html(data['tickets_sold']);
+        });
+    });
+    $(".delete-btn").click(function() {
+        typeid = $(this).attr("data-typeid");
+        eventid = "{{ event.id }}"
+
+        $.confirm({
+            text: "Are you sure? You are about to remove an entry from the system.",
+            title: "Confirmation required",
+            confirm: function(button) {
+
+                $.get('/admission/' + eventid + '/deleteone/' + typeid, { admission_type: typeid }, function(data) {
+                    $('#count-' + typeid).html(data['count']);
+                    $('#total-' + typeid).html("$" + data['total']);
+                    $('#total').html("$" + data['tickets_total']);
+                    $('#attendance').html(data['tickets_sold']);
+                });
+
+            },
+        });
+    });
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% for i in object_list %}
+
+    {% if i.cash == None or i.cash == 0.00 %}
+        <p><a href="{% url 'admission:starting_cash' i.id %}">{{ i.name }}</a></p>
+    {% else %}
+        <p><a href="{% url 'admission:admission' i.id %}">{{ i.name }}</a></p>
+    {% endif%}
+    <p>{{ i.date }}</p>
+    <p>Starting Cashbox Amount: ${{ i.cash }}</p>
+    <p>Revenue: ${{ i.tickets_total }}
+    <p>Expenses: ${{ i.total_expenses }}</p>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,7 @@
+.admission-table, .expenses-table, .cashbox-table {
+    border: 2px solid black;
+}
+
+.admission-table td,th , .expenses-table td, th, .cashbox-table td, th {
+    border: 2px solid black;
+}
