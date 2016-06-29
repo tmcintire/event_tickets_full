@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render_to_response, RequestContext
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.utils import timezone
 from django.views.generic import DetailView, ListView
 from django.contrib.auth.decorators import login_required
 from admission.models import Event
@@ -8,13 +9,15 @@ from forms import EventForm, CashForm
 # Create your views here.
 
 
-class EventsView(ListView):
-    model = Event
-    template_name = 'event_list.html'
+def home(request):
 
-    def get_context_data(self, **kwargs):
-        context = super(EventsView, self).get_context_data(**kwargs)
-        return context
+    return render(request, 'home.html')
+
+
+def events_view(request):
+    event = Event.objects.filter(date__gt=timezone.now()).order_by(('date'))
+
+    return render(request, 'event_list.html', locals())
 
 
 def add_cash(request, event_id):

@@ -1,1 +1,10 @@
-<p>Hello</p>
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="loginBtnDiv">
+        <a class="text-center" href="{% url 'events' %}"><span class="loginBtn btn">Go to All Events</span></a>
+    </div>
+
+{% endblock %}

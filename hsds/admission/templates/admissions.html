@@ -71,11 +71,11 @@
         <tbody id="expense-count">
 
             {% for i in event.expenses %}
-            <tr>
+            <tr class="exp_list">
                 <td><a href="{% url 'admission:edit_expense' i.id %}">{{ i.type }}</a></td>
                 <td>{{ i.notes }}</td>
                 <td>{% if i.percent > 0 %} {{ i.percent }}% {% else %} - {% endif %}</td>
-                <td id="expenses-{{ i.id }}">${{ i.cost }}</td>
+                <td class="expenses-cost"><span id="expenses-{{ i.id }}">${{ i.cost }}</span></td>
             </tr>
             {% endfor %}
         <tr id ="total-expenses-tr">
@@ -114,7 +114,6 @@
         var typeid = $(this).attr("data-typeid");
         var eventid = "{{ event.id }}"
         var expensecount = $('#expense-count').children('tr').not('#total-expenses-tr').length;
-        console.log(expensecount);
 
         $.get('/admission/' + eventid + '/addone/' + typeid, { admission_type: typeid }, function(data) {
             var cash = data['cash']
@@ -128,16 +127,15 @@
             $('#total-expenses').html("$" + data['total_expenses']);
 
             var expenses = data['expenses'];
-            console.log(expenses);
-
             var new_expenses = JSON.parse(expenses);
-            console.log(new_expenses[0].cost);
-            console.log(new_expenses[1].cost);
-            for (i=0; i <= expensecount-1; i++) {
-                console.log(i);
-                var id = i + 1
-                $('#expenses-' + id).html('$' + new_expenses[i].cost);
-            }
+
+            var count = 0
+            $('tr.exp_list td span').each(function() {
+                var i = $(this).attr('id')
+                var parsed = i.split('-')[1]
+                $('#'+i).html('$' + new_expenses[count].cost);
+                count ++
+            });
         });
     });
     $(".delete-btn").click(function() {

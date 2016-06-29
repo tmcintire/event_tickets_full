@@ -3,8 +3,8 @@
 
 {% block content %}
 <div class="event-list">
-{% for i in object_list %}
-    <div class="row">
+<div class="row">
+{% for i in event %}
         <div class="event-data col-md-3">
             {% if i.cash == None or i.cash == 0.00 %}
                 <p><a href="{% url 'admission:starting_cash' i.id %}">{{ i.name }}</a></p>
@@ -19,9 +19,8 @@
                 <p>Expenses: ${{ i.total_expenses }}</p>
             {% endif %}
         </div>
-    </div>
 {% endfor %}
-
+</div>
 </div>
 
 {% endblock %}

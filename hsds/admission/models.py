@@ -59,6 +59,17 @@ class Event(models.Model):
     def total_expenses(self):
         return self.expenses().aggregate(Sum(F('cost'))).values()[0]
 
+    def cash_remaining(self):
+        expenses = self.total_expenses()
+        income = self.tickets_total()
+        cash = self.cash
+        left = cash + income - expenses
+        if left >0:
+            return left
+        else:
+            return "No value"
+
+
     def __unicode__(self):
         return self.name
 
@@ -90,6 +101,7 @@ class Tickets(models.Model):
 
 
 class ExpenseType(models.Model):
+    event = models.ForeignKey(Event)
     expense_type = models.CharField(max_length=100)
 
     def __unicode__(self):

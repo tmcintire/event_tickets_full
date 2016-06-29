@@ -3,9 +3,11 @@ from django.db.models import Sum, Count
 from django.http import HttpResponseRedirect, JsonResponse
 from django.template.response import TemplateResponse
 from django.shortcuts import render, get_object_or_404, render_to_response, RequestContext
+from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
 from forms import AdmissionForm, ExpenseForm, EventTypeForm, ExpenseTypeForm
-from models import AdmissionType, Expenses, Tickets, Event
+from models import AdmissionType, Expenses, Tickets, Event, ExpenseType
 import json
 from django.core.serializers.json import DjangoJSONEncoder
 
@@ -35,12 +37,20 @@ def admission_types(request, event_id):
         cash_remaining = ((total_revenue + cash) - total_expenses)
 
     # loops through the expenses list and modifies "cost" to the result of a percentage of total revenue
-    for i in expenses:
-        if i.percent > 0:
-            i.cost = total_revenue * i.percent/100
-            i.save()
+    if total_revenue != None:
+        for i in expenses:
+            if i.percent > 0:
+                i.cost = total_revenue * i.percent/100
+                i.save()
 
     return render(request, "admissions.html", locals())
+
+
+def report(request):
+
+    events = Event.objects.all()
+
+    return render(request, "report.html", locals())
 
 
 @login_required()
@@ -57,8 +67,9 @@ def add_one(request, event_id, type_id):
     total_revenue = event.tickets_total()
 
     for i in event.expenses():
-        i.cost = total_revenue * i.percent/100
-        i.save()
+        if i.percent != 0:
+            i.cost = total_revenue * i.percent/100
+            i.save()
 
     total_expenses = event.total_expenses()
 
@@ -102,43 +113,62 @@ def delete_one(request, event_id, type_id):
 
 
 @login_required()
-def add_type(request):
+def add_type(request, event_id):
+    event = Event.objects.get(pk=event_id)
     if request.POST:
             form = AdmissionForm(request.POST)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Type added!')
-                return HttpResponseRedirect('/event/all/')
+                url = reverse('admission:add_type', args=(event.id,))
+                return HttpResponseRedirect(url)
     else:
-        form = AdmissionForm()
+        event_name = event.id
+        data_dict = {'event': event_name}
+        form = AdmissionForm(initial=data_dict)
+
+    title = "Admission Types"
+    data = AdmissionType.objects.filter(event=event_id).order_by('-price')
 
     return render(request, 'add.html', locals())
 
 
 @login_required()
-def add_expense(request):
+def add_expense(request, event_id):
+    event = Event.objects.get(pk=event_id)
     if request.POST:
             form = ExpenseForm(request.POST)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Expense added!')
-                return HttpResponseRedirect('/event/all/')
+                url = reverse('admission:add_expense', args=(event.id,))
+                return HttpResponseRedirect(url)
     else:
-        form = ExpenseForm()
+        event_name = event.id
+        data_dict = {'name': event_name, 'cost': '0'}
+        form = ExpenseForm(initial=data_dict)
+
+    title = "Expenses"
+    data = Expenses.objects.filter(name=event_id)
 
     return render(request, 'add.html', locals())
 
 
 @login_required()
-def add_expense_type(request):
+def add_expense_type(request, event_id):
+    event = Event.objects.get(pk=event_id)
     if request.POST:
             form = ExpenseTypeForm(request.POST)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Expense type added!')
-                return HttpResponseRedirect('/event/all/')
+                url = reverse('admission:add_expense_type', args=(event.id,))
+                return HttpResponseRedirect(url)
     else:
-        form = ExpenseTypeForm()
+        event_name = event.id
+        data_dict = {'event': event_name}
+        form = ExpenseTypeForm(initial=data_dict)
+
+    data = ExpenseType.objects.all()
 
     return render(request, 'add.html', locals())
 
@@ -150,7 +180,7 @@ def add_event_type(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Event Type added!')
-                return HttpResponseRedirect('/event/all/')
+                return HttpResponseRedirect('/events/')
     else:
         form = EventTypeForm()
 
@@ -167,7 +197,7 @@ def edit_type(request, i_id):
         if form.is_valid():
             form.save()
 
-            return HttpResponseRedirect('/event/all/')
+            return HttpResponseRedirect('/events/')
 
     else:
         form = AdmissionForm(instance=type)
@@ -188,7 +218,7 @@ def edit_expense(request, expense_id):
         if form.is_valid():
             form.save()
 
-            return HttpResponseRedirect('/event/all/')
+            return HttpResponseRedirect('/events/')
 
     else:
         form = ExpenseForm(instance=expense)

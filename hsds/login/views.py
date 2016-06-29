@@ -18,9 +18,12 @@ def auth_view(request):
     password = request.POST.get('password', '')
     user = auth.authenticate(username=username, password=password)
 
+    if request.user.is_superuser:
+        auth.login(request, user)
+        return HttpResponseRedirect('/test/')
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/events/')
     else:
         return HttpResponseRedirect('/accounts/invalid')
 

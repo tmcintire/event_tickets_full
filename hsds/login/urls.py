@@ -2,6 +2,7 @@ from django.conf.urls import url, patterns, include
 from django.contrib.auth.views import password_change
 from views import login, auth_view, invalid_login, logout, loggedin, account
 
+app_name = "login"
 urlpatterns = [
     url(r'^login/$', login, name="login"),
     url(r'^auth/$', auth_view, name="auth_view"),

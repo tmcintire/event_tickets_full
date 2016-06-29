@@ -23,4 +23,4 @@ class EventTypeForm(forms.ModelForm):
 class ExpenseTypeForm(forms.ModelForm):
     class Meta:
         model = ExpenseType
-        fields = ('expense_type',)
+        fields = ('event', 'expense_type',)
