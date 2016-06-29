@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^event/', include('event.urls')),
     url(r'^admission/', include('admission.urls')),
+    url(r'^accounts/', include('login.urls')),
     url(r'^$', EventsView.as_view(), name="events"),
 ]

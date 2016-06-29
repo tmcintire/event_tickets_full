@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rm db.sqlite3
+rm db/db.sqlite3
 rm -rf /equipment/migrations/
 touch equipment/migrations/__init__.py
 python manage.py makemigrations

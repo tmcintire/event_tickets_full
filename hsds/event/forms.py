@@ -5,7 +5,7 @@ from admission.models import Event
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ('name', 'date', 'time', 'cash')
+        fields = ('organization', 'name', 'type', 'date', 'time', 'cash')
 
 
 class CashForm(forms.ModelForm):

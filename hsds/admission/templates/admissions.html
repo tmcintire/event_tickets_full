@@ -4,112 +4,145 @@
 {% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{% static 'assets/js/jquery.confirm.min.js' %}"></script>
-<h1 class="text-center">{{ event }}</h1>
-
-<button><a href="/volunteers/delete/{{ vol.id }}/" style="color:black">Delete Volunteer</a></button>
+<h1 class="admission-headers text-center">{{ event }}</h1>
 
 <table class="table admission-table">
     <thead>
         <th>Type</th>
         <th>Price</th>
-        <th>Modify</th>
+        <th>Add</th>
+        <th>Remove</th>
         <th>Count</th>
+        {% if request.user.is_superuser %}
         <th>Total</th>
+        {% endif %}
     </thead>
     <tbody>
 
-        {% for i in types %}
+    <h1 style="color:white">{{ test }}</h1>
+    <!-- FOR LOOP THAT LOOPS THROUGH THE DIFFERENT ADMISSION TYPES -->
+    {% for i in types %}
     <tr>
-        <td class="type">{{ i.type }}</td>
-        <td class="price">{{ i.price }}</td>
-        <td><button class="btn btn-primary add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
-            <i class="fa fa-plus -square fa-2x"></i></button>
+        <td>{{ i.type }}</td>
+        <td>${{ i.price }}</td>
+        <td class="add">
+            <button class="btn btn-primary add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
+            <i class="fa fa-plus -square fa-3x"></i></button>
+        </td>
+        <td class="del">
             <button class="confirm btn btn-danger delete-btn" data-typeid="{{ i.id }}" id="delete-{{ i.id }}">
-                <i class="fa fa-minus-square fa-2x"></i></button>
+            <i class="fa fa-minus-square fa-3x"></i></button>
         </td>
-        <td id="count-{{ i.id }}">{{ i.ad_type_total }}</td>
-        <td id="total-{{ i.id }}">
-            {% if i.ad_type_total_price = None %}
-                $0.00
-            {% else %}
-                ${{ i.ad_type_total_price }}
+        <td id="count-{{ i.id }}">{{ i.admission_type_count }}</td>
+        {% if request.user.is_superuser %}
+            <td id="total-{{ i.id }}">
+                {% if i.admission_type_total_price == None %}
+                    $0.00
+                {% else %}
+                    ${{ i.admission_type_total_price }}
+                {% endif %}
+            </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+    <!-- END ADMISSION TYPE FOR LOOP -->
+
+        <tr>
+            <td class="totals" colspan="4"><strong>Totals</strong></td>
+            <td class="count" id="attendance">{{ event.count }}</td>
+            {% if request.user.is_superuser %}
+            <td class="totals" id="total">${{ total_revenue }}</td>
             {% endif %}
-        </td>
-    </tr>
-
-    {% endfor %}
-
-        {{ count }}
-        <tr>
-            <td colspan="3"><strong>Totals</strong></td>
-            <td id="attendance">{{ event.count }}</td>
-            <td id="total">${{ total_revenue }}</td>
 
         </tr>
     </tbody>
 </table>
-<h1 class="text-center">Expenses</h1>
-<table class="table expenses-table">
-    <thead>
-        <th>Name</th>
-        <th>Notes</th>
-        <th>Percentage</th>
-        <th>Cost</th>
-    </thead>
-    <tbody>
 
-    {% for i in event.expenses %}
-    <tr>
-        <td><a href="{% url 'admission:edit_expense' i.id %}">{{ i.type }}</a></td>
-        <td>{{ i.notes }}</td>
-        <td>{% if i.percent > 0 %} {{ i.percent }}% {% else %} - {% endif %}</td>
-        <td>${{ i.cost }}</td>
-    {% endfor %}
-    </tr>
-    <tr>
-        <td colspan="3">Total Expenses</td>
-        <td>${{ event.total_expenses }}</td>
+<!-- only admins can see this section -->
+{% if request.user.is_superuser %}
+    <h1 class="admission-headers text-center">Expenses</h1>
+    <table class="table expenses-table">
+        <thead>
+            <th>Name</th>
+            <th>Notes</th>
+            <th>Percentage</th>
+            <th>Cost</th>
+        </thead>
+        <tbody id="expense-count">
 
-    </tr>
+            {% for i in event.expenses %}
+            <tr>
+                <td><a href="{% url 'admission:edit_expense' i.id %}">{{ i.type }}</a></td>
+                <td>{{ i.notes }}</td>
+                <td>{% if i.percent > 0 %} {{ i.percent }}% {% else %} - {% endif %}</td>
+                <td id="expenses-{{ i.id }}">${{ i.cost }}</td>
+            </tr>
+            {% endfor %}
+        <tr id ="total-expenses-tr">
+            <td colspan="3">Total Expenses</td>
+            <td id="total-expenses">${{ event.total_expenses }}</td>
 
-    </tbody>
-</table>
-
-<h1 class="text-center">Cash Box</h1>
-<table class="table cashbox-table">
-    <thead>
-        <tr>
-            <th style="width: 50%">Beginning Cash</th>
-            <th>Ending Cash</th>
         </tr>
-    </thead>
 
-    <tbody>
-        <tr>
-            <td>{{ cash }}</td>
-            <td>{{ cash_remaining }}</td>
-        </tr>
-    </tbody>
+        </tbody>
+    </table>
 
-</table>
+    <h1 class="admission-headers text-center">Cash Box</h1>
+    <table class="table cashbox-table">
+        <thead>
+            <tr>
+                <th style="width: 50%">Beginning Cash</th>
+                <th>Ending Cash</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td id="cash">{{ cash }}</td>
+                <td id="cash-remaining">{{ cash_remaining }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+{% endif %}
+<!-- End Admin only section -->
 
 
 <script>
-    $(".add-btn").click(function() {
-        typeid = $(this).attr("data-typeid");
-        eventid = "{{ event.id }}"
 
-        console.log(typeid)
+    $(".add-btn").click(function() {
+        var typeid = $(this).attr("data-typeid");
+        var eventid = "{{ event.id }}"
+        var expensecount = $('#expense-count').children('tr').not('#total-expenses-tr').length;
+        console.log(expensecount);
+
         $.get('/admission/' + eventid + '/addone/' + typeid, { admission_type: typeid }, function(data) {
+            var cash = data['cash']
+            var revenue = data['total']
             $('#count-' + typeid).html(data['count']);
             $('#total-' + typeid).html("$" + data['total']);
             $('#total').html("$" + data['tickets_total']);
             $('#attendance').html(data['tickets_sold']);
+            $('#cash').html(data['cash']);
+            $('#cash-remaining').html(data['cash_remaining']);
+            $('#total-expenses').html("$" + data['total_expenses']);
+
+            var expenses = data['expenses'];
+            console.log(expenses);
+
+            var new_expenses = JSON.parse(expenses);
+            console.log(new_expenses[0].cost);
+            console.log(new_expenses[1].cost);
+            for (i=0; i <= expensecount-1; i++) {
+                console.log(i);
+                var id = i + 1
+                $('#expenses-' + id).html('$' + new_expenses[i].cost);
+            }
         });
     });
     $(".delete-btn").click(function() {
-        typeid = $(this).attr("data-typeid");
-        eventid = "{{ event.id }}"
+        var typeid = $(this).attr("data-typeid");
+        var eventid = "{{ event.id }}"
 
         $.confirm({
             text: "Are you sure? You are about to remove an entry from the system.",
@@ -126,6 +159,7 @@
             },
         });
     });
+
 </script>
 
 

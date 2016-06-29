@@ -2,6 +2,127 @@
     border: 2px solid black;
 }
 
-.admission-table td,th , .expenses-table td, th, .cashbox-table td, th {
+.admission-table td , .expenses-table td, .cashbox-table td {
     border: 2px solid black;
+    font-size: 1.5em;
+}
+
+.admission-table th , .expenses-table th, .cashbox-table th {
+    border: 2px solid black;
+    font-size: 1.8em;
+}
+
+table {
+    background: white;
+}
+
+body {
+    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    margin-top: 50px;
+    /*background: url('../img/hsvwall.jpg') center fixed;*/
+    overflow-y:scroll;
+}
+
+/*.event-list {
+    margin-top: 50px;
+
+}
+
+.event-data {
+    background: white;
+    padding: 20px;
+    font-size: 1.3em;
+    border-radius: 5px;
+}
+
+.navbar-default {
+    height: 50px;
+    border: 0px;
+    background: black;
+}
+
+.navbar-default li a{
+    color: white!important;
+}
+
+
+.navbar .navbar-brand {
+    color: #E3EDEE;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand:hover {
+    color: #E3EDEE;
+    cursor: default;
+}
+
+
+.navbar li > a{
+    font-size: 1.7em;
+}
+
+.navbar-default .navbar-nav > li > a {
+    margin-left: 20px;
+}
+
+.navbar .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+
+.navbar > .navbar-collapse {
+    background-color: black;
+    color:#ffffff;
+}
+
+.navbar .navbar-nav > li > a:hover, .navbar .navbar-collapse .navbar-nav .dropdown li:hover, .navbar .navbar-collapse .navbar-nav .dropdown a:hover {
+    background-color: gray;
+    color:#ffffff;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown ul{
+    background-color: #555555;
+    color:#ffffff;
+    width: 270px;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background:#555555!important;
+    color:white !important;
+}
+
+.navbar .navbar-default .dropdown > a: hover {
+    background: #555555;
+}
+
+
+
+
+
+
+.admission-headers {
+    color:#E3EDEE;
+}
+
+
+.admission-table th {
+    font-weight: bold;
+}
+
+
+.add, .del {
+    width: 12%;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .admission-table th {
+        font-size: 1.6em;
+        font-weight: bold;
+    }
+    .add, .del {
+        width: 12%;
+    }
 }

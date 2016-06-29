@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response, Requ
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views.generic import DetailView, ListView
+from django.contrib.auth.decorators import login_required
 from admission.models import Event
 from forms import EventForm, CashForm
 # Create your views here.

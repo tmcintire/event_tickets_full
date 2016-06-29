@@ -1,307 +1,3014 @@
 [
 {
   "model": "admin.logentry",
-  "pk": 1,
+  "pk": 20,
   "fields": {
-    "action_time": "2016-06-23T03:19:37.371Z",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "1",
-    "object_repr": "Event object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 2,
-  "fields": {
-    "action_time": "2016-06-23T03:34:37.882Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "1",
-    "object_repr": "AdmissionType object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 3,
-  "fields": {
-    "action_time": "2016-06-23T03:34:48.299Z",
-    "user": 1,
-    "content_type": 8,
+    "action_time": "2016-06-26T23:56:14.853Z",
+    "user": 2,
+    "content_type": 18,
     "object_id": "2",
-    "object_repr": "AdmissionType object",
+    "object_repr": "Moonshine Rhythm Club",
     "action_flag": 1,
     "change_message": "Added."
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 4,
+  "pk": 21,
   "fields": {
-    "action_time": "2016-06-23T03:34:53.532Z",
-    "user": 1,
-    "content_type": 8,
+    "action_time": "2016-06-27T00:16:51.009Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Moonshine Rhythm Club",
+    "action_flag": 2,
+    "change_message": "Changed cash."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2016-06-27T00:30:01.095Z",
+    "user": 2,
+    "content_type": 18,
     "object_id": "3",
-    "object_repr": "AdmissionType object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 5,
-  "fields": {
-    "action_time": "2016-06-23T03:34:59.446Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "4",
-    "object_repr": "AdmissionType object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 6,
-  "fields": {
-    "action_time": "2016-06-23T03:35:03.854Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "5",
-    "object_repr": "AdmissionType object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2016-06-23T03:35:09.269Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "6",
-    "object_repr": "AdmissionType object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2016-06-23T03:35:14.729Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "7",
-    "object_repr": "AdmissionType object",
-    "action_flag": 1,
-    "change_message": "Added."
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2016-06-23T15:08:23.563Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "1",
-    "object_repr": "General",
+    "object_repr": "Moonshine Rhythm Club",
     "action_flag": 3,
     "change_message": ""
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 10,
+  "pk": 23,
   "fields": {
-    "action_time": "2016-06-23T15:08:38.792Z",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "8",
-    "object_repr": "General",
-    "action_flag": 1,
-    "change_message": "Added."
+    "action_time": "2016-06-27T00:30:12.128Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "4",
+    "object_repr": "Moonshine Rhythm Club",
+    "action_flag": 3,
+    "change_message": ""
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 11,
+  "pk": 24,
   "fields": {
-    "action_time": "2016-06-23T18:50:47.432Z",
-    "user": 1,
-    "content_type": 9,
-    "object_id": "1",
-    "object_repr": "Moonshine Rhythm Club Venue",
-    "action_flag": 1,
-    "change_message": "Added."
+    "action_time": "2016-06-27T00:31:18.370Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "5",
+    "object_repr": "Old City Buskers",
+    "action_flag": 2,
+    "change_message": "Changed cash."
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 12,
+  "pk": 25,
   "fields": {
-    "action_time": "2016-06-23T18:51:05.132Z",
-    "user": 1,
-    "content_type": 9,
+    "action_time": "2016-06-27T01:08:13.348Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "6",
+    "object_repr": "Moonshine Rhythm Club",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2016-06-27T01:09:11.834Z",
+    "user": 2,
+    "content_type": 18,
     "object_id": "2",
-    "object_repr": "Moonshine Rhythm Club Band",
+    "object_repr": "Moonshine Rhythm Club",
+    "action_flag": 2,
+    "change_message": "Changed cash."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2016-06-27T01:10:02.631Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Moonshine Rhythm Club",
+    "action_flag": 2,
+    "change_message": "Changed cash."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2016-06-27T01:10:14.196Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Moonshine Rhythm Club",
+    "action_flag": 2,
+    "change_message": "Changed cash."
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2016-06-27T01:37:14.114Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "5",
+    "object_repr": "Old City Buskers",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2016-06-27T19:42:49.149Z",
+    "user": 2,
+    "content_type": 15,
+    "object_id": "3",
+    "object_repr": "test",
     "action_flag": 1,
     "change_message": "Added."
   }
 },
 {
   "model": "admin.logentry",
-  "pk": 13,
+  "pk": 31,
   "fields": {
-    "action_time": "2016-06-23T18:51:27.038Z",
-    "user": 1,
-    "content_type": 9,
+    "action_time": "2016-06-27T19:42:56.486Z",
+    "user": 2,
+    "content_type": 15,
     "object_id": "3",
-    "object_repr": "Moonshine Rhythm Club Teachers",
-    "action_flag": 1,
-    "change_message": "Added."
+    "object_repr": "test",
+    "action_flag": 2,
+    "change_message": "No fields changed."
   }
 },
 {
-  "model": "event.event",
-  "pk": 1,
+  "model": "admission.event",
+  "pk": 2,
   "fields": {
     "name": "Moonshine Rhythm Club",
-    "date": "2016-07-16T19:00:00Z"
-  }
-},
-{
-  "model": "event.event",
-  "pk": 2,
-  "fields": {
-    "name": "Old City Buskers",
-    "date": "2016-07-19T00:00:00Z"
-  }
-},
-{
-  "model": "admission.admissiontype",
-  "pk": 2,
-  "fields": {
-    "name": 1,
-    "type": "Student",
-    "price": "7.00",
-    "count": 294
-  }
-},
-{
-  "model": "admission.admissiontype",
-  "pk": 3,
-  "fields": {
-    "name": 1,
-    "type": "Military",
-    "price": "7.00",
-    "count": 41
-  }
-},
-{
-  "model": "admission.admissiontype",
-  "pk": 4,
-  "fields": {
-    "name": 1,
-    "type": "Volunteer",
-    "price": "0.00",
-    "count": 32
-  }
-},
-{
-  "model": "admission.admissiontype",
-  "pk": 5,
-  "fields": {
-    "name": 1,
-    "type": "DJ",
-    "price": "0.00",
-    "count": 7
-  }
-},
-{
-  "model": "admission.admissiontype",
-  "pk": 6,
-  "fields": {
-    "name": 1,
-    "type": "Teacher",
-    "price": "0.00",
-    "count": 5
+    "date": "2016-07-16",
+    "time": "20:00:00",
+    "cash": "10.00"
   }
 },
 {
   "model": "admission.admissiontype",
   "pk": 7,
   "fields": {
-    "name": 1,
-    "type": "Free Pass",
-    "price": "0.00",
-    "count": 13
+    "type": "General",
+    "price": "10.00"
   }
 },
 {
   "model": "admission.admissiontype",
   "pk": 8,
   "fields": {
-    "name": 1,
-    "type": "General",
-    "price": "10.00",
-    "count": 289
+    "type": "Student",
+    "price": "7.00"
   }
 },
 {
   "model": "admission.admissiontype",
   "pk": 9,
   "fields": {
-    "name": 2,
-    "type": "General",
-    "price": "10.00",
-    "count": 18
+    "type": "Military",
+    "price": "7.00"
   }
 },
 {
   "model": "admission.admissiontype",
   "pk": 10,
   "fields": {
-    "name": 2,
-    "type": "General",
-    "price": "10.00",
-    "count": 21
+    "type": "DJ",
+    "price": "0.00"
   }
 },
 {
-  "model": "admission.expenses",
-  "pk": 1,
+  "model": "admission.admissiontype",
+  "pk": 11,
   "fields": {
-    "name": 1,
-    "type": "Venue",
-    "notes": "Flying Monkey",
-    "cost": "0.00"
-  }
-},
-{
-  "model": "admission.expenses",
-  "pk": 2,
-  "fields": {
-    "name": 1,
-    "type": "Band",
-    "notes": "Mooneshine Rhythm Club",
-    "cost": "800.00"
-  }
-},
-{
-  "model": "admission.expenses",
-  "pk": 3,
-  "fields": {
-    "name": 1,
     "type": "Teachers",
-    "notes": "Teachers",
-    "cost": "0.00"
+    "price": "0.00"
+  }
+},
+{
+  "model": "admission.admissiontype",
+  "pk": 12,
+  "fields": {
+    "type": "Volunteers",
+    "price": "0.00"
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 537,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 538,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 539,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 540,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 541,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 542,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 543,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 544,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 545,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 546,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 547,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 548,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 549,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 550,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 551,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 552,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 553,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 554,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 555,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 556,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 557,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 558,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 559,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 560,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 561,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 562,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 563,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 564,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 565,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 566,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 567,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 568,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 569,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 570,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 571,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 572,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 573,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 574,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 575,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 576,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 577,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 578,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 579,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 580,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 581,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 582,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 583,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 584,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 585,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 586,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 587,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 588,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 589,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 590,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 591,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 592,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 593,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 594,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 595,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 596,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 597,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 598,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 599,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 600,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 601,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 602,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 603,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 604,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 605,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 606,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 607,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 608,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 609,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 610,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 611,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 612,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 613,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 614,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 615,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 616,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 617,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 618,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 619,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 620,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 621,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 622,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 623,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 624,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 625,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 626,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 627,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 628,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 629,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 630,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 631,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 632,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 633,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 634,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 635,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 636,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 637,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 638,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 639,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 640,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 641,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 642,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 643,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 644,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 645,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 646,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 647,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 648,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 649,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 650,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 651,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 652,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 653,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 689,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 690,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 691,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 692,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 693,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 694,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 695,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 696,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 697,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 698,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 699,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 700,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 701,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 702,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 703,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 704,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 705,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 706,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 707,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 708,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 709,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 710,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 711,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 712,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 713,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 714,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 715,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 716,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 717,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 718,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 719,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 720,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 721,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 722,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 723,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 724,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 725,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 726,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 727,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 728,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 729,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 730,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 731,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 732,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 733,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 734,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 735,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 736,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 737,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 738,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 739,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 740,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 741,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 742,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 743,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 744,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 745,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 746,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 747,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 748,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 749,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 750,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 751,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 752,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 753,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 754,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 755,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 756,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 757,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 758,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 759,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 760,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 761,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 762,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 763,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 764,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 765,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 766,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 767,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 768,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 769,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 770,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 771,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 772,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 773,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 774,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 775,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 776,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 777,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 778,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 779,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 780,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 781,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 782,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 783,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 784,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 785,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 786,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 787,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 788,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 789,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 790,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 791,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 792,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 793,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 794,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 795,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 796,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 797,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 798,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 799,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 800,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 801,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 802,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 803,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 804,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 805,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 806,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 807,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 808,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 809,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 810,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 811,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 812,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 813,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 814,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 815,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 816,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 817,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 818,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 819,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 820,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 821,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 822,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 823,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 824,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 825,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 826,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 827,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 828,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 829,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 830,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 831,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 832,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 833,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 834,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 835,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 836,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 837,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 838,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 839,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 840,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 841,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 842,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 843,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 844,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 845,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 846,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 847,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 848,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 849,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 850,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 851,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 852,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 853,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 854,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 855,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 856,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 857,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 858,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 859,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 860,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 861,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 862,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 863,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 864,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 865,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 866,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 867,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 868,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 869,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 870,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 871,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 872,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 873,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 874,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 875,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 876,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 877,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 878,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 879,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 880,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 881,
+  "fields": {
+    "type": 8,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 882,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 883,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 884,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 885,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 886,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 887,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 888,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 889,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 890,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 891,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 892,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 893,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 894,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 895,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 896,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 897,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 898,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 899,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 900,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 901,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 902,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 903,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 904,
+  "fields": {
+    "type": 9,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 905,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 906,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 907,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 908,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 909,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 910,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 911,
+  "fields": {
+    "type": 7,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 923,
+  "fields": {
+    "type": 10,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 924,
+  "fields": {
+    "type": 11,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 925,
+  "fields": {
+    "type": 11,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 926,
+  "fields": {
+    "type": 12,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 927,
+  "fields": {
+    "type": 12,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 928,
+  "fields": {
+    "type": 12,
+    "event": 2
+  }
+},
+{
+  "model": "admission.tickets",
+  "pk": 929,
+  "fields": {
+    "type": 12,
+    "event": 2
+  }
+},
+{
+  "model": "admission.expenses",
+  "pk": 6,
+  "fields": {
+    "name": 2,
+    "type": "Venue",
+    "notes": "The Flying Monkey",
+    "cost": "872.40",
+    "percent": 30
+  }
+},
+{
+  "model": "admission.expenses",
+  "pk": 7,
+  "fields": {
+    "name": 2,
+    "type": "Band",
+    "notes": "Moonshine Rhythm Club",
+    "cost": "2035.60",
+    "percent": 70
   }
 }
 ]
