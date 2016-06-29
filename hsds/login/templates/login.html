@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="text-center">Huntsville Swing Dance Society Admin Login</h1>
+    <br /><br />
+{% if form.errors %}
+
+    <p class="error">Sorry, that is an invalid username or password</p>
+{% endif %}
+
+<form class="text-center" action="/accounts/auth/" method="post"> {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="" id="username"><br />
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="" id="password">
+    <br />
+    <input type="submit" value="Login" />
+</form>
+
+{% endblock %}
