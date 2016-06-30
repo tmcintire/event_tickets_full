@@ -28,7 +28,7 @@ def add_cash(request, event_id):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Modified!')
-                return HttpResponseRedirect('/event/all/')
+                return HttpResponseRedirect('/events/')
     else:
         form = CashForm(instance=instance)
 
