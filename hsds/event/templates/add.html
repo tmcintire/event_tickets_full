@@ -3,24 +3,37 @@
 
 {% block content %}
 
+    {{ request.url }}
 <h3>{{ header }}</h3>
 <br />
+    {% if "/events/" not in request.path %}
     <a href="{%  url 'admission:admission' event.id %}"><button class="backBtn btn btn-primary">Back to Event</button></a>
-<div id="add_form">
-    <form action="" method="post">{% csrf_token %}
+    {%  endif %}
+<div class="row">
+    <div class="col-md-6">
+        <div id="add_form">
+            <h1>Add {{ title }}</h1>
+            <form action="" method="post">{% csrf_token %}
 
-        {{ form|crispy }}
-        <br />
-        <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+                {{ form|crispy }}
+                <br />
+                <input class="btn btn-primary" type="submit" name="submit" value="Submit">
 
-    </form>
-</div>
-<div id="add_data">
+            </form>
+        </div>
+    </div>
 
-    <h1 class="text-center">{{ title }}</h1>
-    <hr>
-    {%  for i in data %}
-        <p>{{ i }}</p>
-    {% endfor %}
+{% if "/events/" not in request.path %}
+    <div class="col-md-6">
+        <div id="add-data">
+
+            <h1 class="text-center">{{ title }}</h1>
+            <hr>
+            {%  for i in data %}
+                <p>{{ i }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
 </div>
 {% endblock %}

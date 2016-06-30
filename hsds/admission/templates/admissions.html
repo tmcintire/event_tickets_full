@@ -4,14 +4,20 @@
 {% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{% static 'assets/js/jquery.confirm.min.js' %}"></script>
+
 <h1 class="admission-headers text-center">{{ event }}</h1>
 
+    <button class="hideBtn btn btn-primary">Hide Add/Remove Buttons</button>
+
+<div class="admission-wrapper">
 <table class="table admission-table">
     <thead>
         <th>Type</th>
         <th>Price</th>
-        <th>Add</th>
-        <th>Remove</th>
+        <th class="hideable">Add</th>
+        {% if request.user.is_superuser %}
+        <th class="hideable">Remove</th>
+        {% endif %}
         <th>Count</th>
         {% if request.user.is_superuser %}
         <th>Total</th>
@@ -19,20 +25,21 @@
     </thead>
     <tbody>
 
-    <h1 style="color:white">{{ test }}</h1>
     <!-- FOR LOOP THAT LOOPS THROUGH THE DIFFERENT ADMISSION TYPES -->
     {% for i in types %}
-    <tr>
+    <tr class="admission-content">
         <td>{{ i.type }}</td>
         <td>${{ i.price }}</td>
-        <td class="add">
-            <button class="btn btn-primary add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
+        <td class="add hideable">
+            <button data-toggle="modal" data-target="#{{ i.id }}" class="btn btn-success add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
             <i class="fa fa-plus -square fa-3x"></i></button>
         </td>
-        <td class="del">
+        {% if request.user.is_superuser %}
+        <td class="del hideable">
             <button class="confirm btn btn-danger delete-btn" data-typeid="{{ i.id }}" id="delete-{{ i.id }}">
             <i class="fa fa-minus-square fa-3x"></i></button>
         </td>
+        {% endif %}
         <td id="count-{{ i.id }}">{{ i.admission_type_count }}</td>
         {% if request.user.is_superuser %}
             <td id="total-{{ i.id }}">
@@ -48,7 +55,12 @@
     <!-- END ADMISSION TYPE FOR LOOP -->
 
         <tr>
-            <td class="totals" colspan="4"><strong>Totals</strong></td>
+            <td class="totals"><strong>Totals</strong></td>
+            <td></td>
+            <td class="hideable"></td>
+            {% if request.user.is_superuser %}
+            <td class="hideable"></td>
+            {% endif %}
             <td class="count" id="attendance">{{ event.count }}</td>
             {% if request.user.is_superuser %}
             <td class="totals" id="total">${{ total_revenue }}</td>
@@ -58,6 +70,45 @@
     </tbody>
 </table>
 
+
+
+
+    <!-- only admins can see this section -->
+{% if request.user.is_superuser %}
+    <h1 class="admission-headers text-center">Income</h1>
+    <table class="table expenses-table">
+        <thead>
+            <th>Type</th>
+            <th>Notes</th>
+            <th>Amount</th>
+        </thead>
+        <tbody id="expense-count">
+        <tr>
+            <td colspan="2">Income from Admission</td>
+            <td id="total-expenses">${{ total_revenue }}</td>
+        </tr>
+
+        {% for i in income %}
+            <tr>
+                <td>{{ i.type }}</td>
+                <td>{{ i.notes }}</td>
+                <td>${{ i.amount }}</td>
+            </tr>
+        {% endfor %}
+
+        <tr>
+            <td colspan="2">Total Income for Event</td>
+            <td id="all-income">${{ all_income }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+{% endif %}
+
+
+
+
 <!-- only admins can see this section -->
 {% if request.user.is_superuser %}
     <h1 class="admission-headers text-center">Expenses</h1>
@@ -65,7 +116,7 @@
         <thead>
             <th>Name</th>
             <th>Notes</th>
-            <th>Percentage</th>
+            <th>Percent</th>
             <th>Cost</th>
         </thead>
         <tbody id="expense-count">
@@ -80,7 +131,7 @@
             {% endfor %}
         <tr id ="total-expenses-tr">
             <td colspan="3">Total Expenses</td>
-            <td id="total-expenses">${{ event.total_expenses }}</td>
+            <td id="expenses-summary">${{ event.total_expenses }}</td>
 
         </tr>
 
@@ -105,58 +156,179 @@
 
     </table>
 {% endif %}
+
 <!-- End Admin only section -->
 
 
+
+<div class="modal tickets-modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">How many tickets?</h4>
+      </div>
+      <div class="modal-body">
+          <form id="ticket-form" method="post">{% csrf_token %}
+            <div class="styled-select">
+                <select id="number-tickets" class="1-100"></select>
+            </div>
+            <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Submit">
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
 <script>
+$(document).ready(function() {
+    $('.admission-wrapper').show()
 
-    $(".add-btn").click(function() {
-        var typeid = $(this).attr("data-typeid");
-        var eventid = "{{ event.id }}"
-        var expensecount = $('#expense-count').children('tr').not('#total-expenses-tr').length;
+});
 
-        $.get('/admission/' + eventid + '/addone/' + typeid, { admission_type: typeid }, function(data) {
-            var cash = data['cash']
-            var revenue = data['total']
-            $('#count-' + typeid).html(data['count']);
-            $('#total-' + typeid).html("$" + data['total']);
-            $('#total').html("$" + data['tickets_total']);
-            $('#attendance').html(data['tickets_sold']);
-            $('#cash').html(data['cash']);
-            $('#cash-remaining').html(data['cash_remaining']);
-            $('#total-expenses').html("$" + data['total_expenses']);
+    $(function() {
+    var $select = $(".1-100");
+    for (i = 1; i <= 100; i++) {
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
+$(".hideBtn").click(function() {
+    $('.hideable').toggle();
+    if ($(this).html() == "Hide Add/Remove Buttons") {
+        $(this).html('Show Add/Remove Buttons')
+    } else if ($(this).html() == "Show Add/Remove Buttons") {
+        $(this).html('Hide Add/Remove Buttons')
+    }
+});
+$(".add-btn").click(function() {
+    typeid = $(this).attr("data-typeid");
+    $('.modal').attr('id', typeid)
+    eventid = "{{ event.id }}"
+    expensecount = $('#expense-count').children('tr').not('#total-expenses-tr').length;
+});
+$('#ticket-form').on('submit', function(event) {
+    event.preventDefault();
+    console.log("form submitted!") // sanity check
+    create_post();
+});
 
-            var expenses = data['expenses'];
+function create_post() {
+    console.log("create post is working!") // sanity check
+    $.ajax({
+        url: "/admission/" + eventid + "/addtickets/", // the endpoint
+        type: "POST", // http method
+        data: {
+            ticket_number: $('#number-tickets').val(),
+            type_id: typeid,
+            event_id: eventid
+        }, // data sent with the post request
+        // handle a successful response
+        success: function(json) {
+            $('.modal').modal('hide');
+            $('#number-tickets').val('1');
+            console.log(json); // log the returned json to the console
+            console.log("success"); // another sanity check
+            console.log(json['total_expenses'])
+            var cash = json['cash']
+            $('#count-' + typeid).html(json['count']);
+            $('#total-' + typeid).html("$" + json['total']);
+            $('#total').html("$" + json['tickets_total']);
+            $('#attendance').html(json['tickets_sold']);
+            $('#cash').html(json['cash']);
+            $('#cash-remaining').html(json['cash_remaining']);
+            $('#expenses-summary').html(json['total_expenses']);
+            $('#all-income').html("$" + json['all_income']);
+            var expenses = json['expenses'];
             var new_expenses = JSON.parse(expenses);
-
             var count = 0
             $('tr.exp_list td span').each(function() {
                 var i = $(this).attr('id')
                 var parsed = i.split('-')[1]
-                $('#'+i).html('$' + new_expenses[count].cost);
-                count ++
+                $('#' + i).html('$' + new_expenses[count].cost);
+                count++
             });
-        });
+        },
+        // handle a non-successful response
+        error: function(xhr, errmsg, err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
+                errmsg + " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
     });
-    $(".delete-btn").click(function() {
-        var typeid = $(this).attr("data-typeid");
-        var eventid = "{{ event.id }}"
-
-        $.confirm({
-            text: "Are you sure? You are about to remove an entry from the system.",
-            title: "Confirmation required",
-            confirm: function(button) {
-
-                $.get('/admission/' + eventid + '/deleteone/' + typeid, { admission_type: typeid }, function(data) {
-                    $('#count-' + typeid).html(data['count']);
-                    $('#total-' + typeid).html("$" + data['total']);
-                    $('#total').html("$" + data['tickets_total']);
-                    $('#attendance').html(data['tickets_sold']);
-                });
-
-            },
-        });
+};
+$(".delete-btn").click(function() {
+    var typeid = $(this).attr("data-typeid");
+    var eventid = "{{ event.id }}"
+    $.confirm({
+        text: "Are you sure?.",
+        title: "Confirmation required",
+        confirm: function(button) {
+            $.get('/admission/' + eventid + '/deleteone/' + typeid, {
+                admission_type: typeid
+            }, function(data) {
+                $('#count-' + typeid).html(data['count']);
+                $('#total-' + typeid).html("$" + data['total']);
+                $('#total').html("$" + data['tickets_total']);
+                $('#attendance').html(data['tickets_sold']);
+            });
+        },
     });
+});
+$(function() {
+    // This function gets cookie with a given name
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+    /*
+    The functions below will create a header with csrftoken
+    */
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    function sameOrigin(url) {
+        // test that a given url is a same-origin URL
+        // url could be relative or scheme relative or absolute
+        var host = document.location.host; // host + port
+        var protocol = document.location.protocol;
+        var sr_origin = '//' + host;
+        var origin = protocol + sr_origin;
+        // Allow absolute or scheme relative URLs to same origin
+        return (url == origin || url.slice(0, origin.length + 1) == origin + '/') || (url == sr_origin || url.slice(0,
+                sr_origin.length + 1) == sr_origin + '/') ||
+            // or any other URL that isn't scheme relative or absolute i.e relative.
+            !(/^(\/\/|http:|https:).*/.test(url));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+                // Send the token to same-origin, relative URLs only.
+                // Send the token only if the method warrants CSRF protection
+                // Using the CSRFToken value acquired earlier
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+});
 
 </script>
 

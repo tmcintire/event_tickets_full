@@ -3,15 +3,16 @@
 
 {% block content %}
 
+
 <h3>{{ header }}</h3>
 
-
+<div id="reports">
     {% for i in events %}
         <p>Name: {{ i.name }}</p>
         <p>Income: ${{ i.tickets_total }}</p>
         <p>Expense: ${{  i.total_expenses }}</p>
         <p>Net: ${{ i.cash_remaining }}</p>
         <br />
-
     {% endfor %}
+</div>
 {% endblock %}

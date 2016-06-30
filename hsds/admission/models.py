@@ -59,6 +59,12 @@ class Event(models.Model):
     def total_expenses(self):
         return self.expenses().aggregate(Sum(F('cost'))).values()[0]
 
+    def income(self):
+        return self.income_set.all()
+
+    def total_income(self):
+        return self.income().aggregate(Sum(F('amount'))).values()[0]
+
     def cash_remaining(self):
         expenses = self.total_expenses()
         income = self.tickets_total()
@@ -76,7 +82,7 @@ class Event(models.Model):
 
 class AdmissionType(models.Model):
     event = models.ForeignKey(Event)
-    type = models.CharField(max_length=100)
+    type = models.CharField(max_length=100, verbose_name="Admission Type (ex. General)")
     price = models.DecimalField(decimal_places=2, max_digits=10)
 
     def admission_type(self):
@@ -102,7 +108,7 @@ class Tickets(models.Model):
 
 class ExpenseType(models.Model):
     event = models.ForeignKey(Event)
-    expense_type = models.CharField(max_length=100)
+    expense_type = models.CharField(max_length=100, verbose_name="Expense Type (ex. Band)")
 
     def __unicode__(self):
         return self.expense_type
@@ -110,7 +116,7 @@ class ExpenseType(models.Model):
 
 class Expenses(models.Model):
     name = models.ForeignKey(Event)
-    type = models.ForeignKey(ExpenseType)
+    type = models.ForeignKey(ExpenseType, verbose_name="Expense Type")
     notes = models.CharField(max_length=100)
     cost = models.DecimalField(max_length=10, decimal_places=2, max_digits=10)
     percent = models.IntegerField(blank=True, null=True)
@@ -119,4 +125,19 @@ class Expenses(models.Model):
         return '%s %s' % (self.name, self.type)
 
 
+class IncomeType(models.Model):
+    event = models.ForeignKey(Event)
+    income_type = models.CharField(max_length=100)
 
+    def __unicode__(self):
+        return self.income_type
+
+
+class Income(models.Model):
+    event = models.ForeignKey(Event)
+    type = models.ForeignKey(IncomeType, verbose_name="Income Type")
+    notes = models.CharField(max_length=100)
+    amount = models.DecimalField(max_length=10, decimal_places=2, max_digits=10)
+
+    def __unicode__(self):
+        return '%s %s' % (self.type, self.notes)

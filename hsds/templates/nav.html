@@ -10,7 +10,7 @@
       </button>
       <a class="navbar-brand" href="#">
           {%  if user.is_authenticated %}
-              {{ name }}
+              {{ organization_name }}
           {% else %}
                 Event Organizer
           {%  endif %}
@@ -22,6 +22,7 @@
       <ul class="nav navbar-nav">
           {% if user.is_authenticated %}
         <li><a href="{%  url 'events' %}">Events <span class="sr-only">(current)</span></a></li>
+        {% if request.user.is_superuser %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -33,8 +34,9 @@
         {% if event_id == None %}
         {% elif "/admission/" in request.path %}
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Event Options <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Income/Expense <span class="caret"></span></a>
           <ul class="dropdown-menu">
+              <li><a href="{% url 'admission:add_income' event_id %}">Add Income</a></li>
               <li><a href="{% url 'admission:add_expense' event_id %}">Add Expense</a></li>
           </ul>
         </li>
@@ -43,10 +45,14 @@
           <ul class="dropdown-menu">
               <li><a href="{% url 'admission:add_type' event_id %}">Add Admission Type</a></li>
               <li><a href="{% url 'admission:add_expense_type' event_id %}">Add Expense Type</a></li>
+              <li><a href="{% url 'admission:add_income_type' event_id %}">Add Income Type</a></li>
           </ul>
         </li>
         {% endif %}
-      <li><a href="/admin">Admin</a></li>
+        {% if request.user.is_superuser %}
+            <li><a href="/admin">Admin</a></li>
+        {% endif %}
+      {% endif %}
       </ul>
         {% endif %}
 
