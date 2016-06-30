@@ -11,7 +11,6 @@ from forms import EventForm, CashForm
 
 def home(request):
 
-
     return render(request, 'home.html')
 
 
