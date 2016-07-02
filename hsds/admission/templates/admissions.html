@@ -34,12 +34,10 @@
             <button data-toggle="modal" data-target="#{{ i.id }}" class="btn btn-success add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
             <i class="fa fa-plus -square fa-3x"></i></button>
         </td>
-        {% if request.user.is_superuser %}
         <td class="del hideable">
             <button class="confirm btn btn-danger delete-btn" data-typeid="{{ i.id }}" id="delete-{{ i.id }}">
             <i class="fa fa-minus-square fa-3x"></i></button>
         </td>
-        {% endif %}
         <td id="count-{{ i.id }}">{{ i.admission_type_count }}</td>
         {% if request.user.is_superuser %}
             <td id="total-{{ i.id }}">
