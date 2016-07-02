@@ -225,8 +225,8 @@ body {
     background-color: #fff;
 }
 
-.navbar > .navbar-collapse {
-    background-color: #000;
+.navbar-collapse {
+    background-color: black;
     color: #fff;
 }
 
@@ -267,7 +267,7 @@ body {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .admission-table th {
         font-size: 1.6em;
         font-weight: 700;
@@ -279,5 +279,10 @@ body {
 
     .hideBtn {
         display: none;
+    }
+    .event-data {
+        margin: 40px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 5px 1px #777;
     }
 }

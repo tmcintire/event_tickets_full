@@ -9,8 +9,8 @@
 <div id="reports">
     {% for i in events %}
         <p>Name: {{ i.name }}</p>
-        <p>Income: ${{ i.tickets_total }}</p>
-        <p>Expense: ${{  i.total_expenses }}</p>
+        <p>Income:{% if i.tickets_total == None %} $0.00 {% else %} ${{ i.tickets_total }} {% endif %}</p>
+        <p>Expense:{% if i.total_expenses == None %} $0.00 {% else %} ${{  i.total_expenses }} {% endif %}</p>
         <p>Net: ${{ i.cash_remaining }}</p>
         <br />
     {% endfor %}

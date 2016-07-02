@@ -67,13 +67,19 @@ class Event(models.Model):
 
     def cash_remaining(self):
         expenses = self.total_expenses()
+        if expenses is None:
+            expenses = 0
         income = self.tickets_total()
+        if income is None:
+            income = 0;
         cash = self.cash
+        if cash is None:
+            cash = 0
         left = cash + income - expenses
-        if left >0:
+        if left > 0:
             return left
         else:
-            return "No value"
+            return 0
 
     def __unicode__(self):
         return self.name

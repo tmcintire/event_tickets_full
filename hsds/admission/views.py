@@ -64,6 +64,7 @@ def report(request):
     events = Event.objects.all()
     header = "Reports"
 
+
     return render(request, "report.html", locals())
 
 
