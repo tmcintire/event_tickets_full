@@ -4,6 +4,7 @@
 {% block content %}
 
     {{ request.url }}
+
 <h3>{{ header }}</h3>
 <br />
     {% if "/events/" not in request.path %}
@@ -36,4 +37,6 @@
     </div>
 {% endif %}
 </div>
+
+
 {% endblock %}

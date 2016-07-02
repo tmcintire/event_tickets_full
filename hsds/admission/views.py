@@ -125,20 +125,6 @@ def add_tickets(request, event_id):
 
 
         }
-
-
-
-        # response_data = {}
-        #
-        # response_data['result'] = 'Create post successful!'
-        # response_data['num_tickets'] = num_tickets
-        # response_data['type_id'] = type_id
-        # response_data['event_id'] = event_id
-
-
-
-
-
         return JsonResponse(data)
 
     else:

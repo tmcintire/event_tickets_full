@@ -5,6 +5,10 @@ from admission.models import Event
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
+        widgets = {
+            'date': forms.DateInput(attrs={'class': 'datepicker'}),
+            'time': forms.TimeInput(attrs={'class': 'timepicker'}),
+        }
         fields = ('organization', 'name', 'type', 'date', 'time', 'cash')
 
 

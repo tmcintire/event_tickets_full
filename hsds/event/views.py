@@ -17,6 +17,8 @@ def home(request):
 def events_view(request):
     event = Event.objects.filter(date__gt=timezone.now()).order_by(('date'))
 
+
+
     return render(request, 'event_list.html', locals())
 
 
@@ -51,3 +53,9 @@ def add_event(request):
         form = EventForm()
 
     return render(request, 'add.html', locals())
+
+
+def delete_event(request, event_id):
+    Event.objects.get(pk=event_id).delete()
+    messages.success(request, 'Event Removed!')
+    return HttpResponseRedirect('/events/')

@@ -5,7 +5,8 @@
 <div class="event-list">
 <div class="row">
 {% for i in event %}
-        <div class="event-data col-md-3">
+        <div class="event-data col-md-3" id="event-{{ i.id }}">
+            <a class="delete-event" href="#" data-eventid="{{ i.id }}"><div class="delete-x">X</div></a>
             {% if i.cash == None or i.cash == 0.00 %}
                 <p><a href="{% url 'admission:starting_cash' i.id %}">{{ i.name }}</a></p>
             {% else %}
@@ -22,5 +23,25 @@
 {% endfor %}
 </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(".delete-event").click(function() {
+    var eventid = $(this).attr("data-eventid");
+    $.confirm({
+        text: "You are about to REMOVE this event and all it's data. Are you sure?",
+        title: "Confirmation required",
+        confirm: function(button) {
+            $.get('/events/delete/' + eventid ,function(data) {
+                $('#event-' + eventid).remove()
+
+
+            });
+        },
+    });
+});
+
+
+</script>
 
 {% endblock %}

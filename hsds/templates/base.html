@@ -10,6 +10,7 @@
     <title>Event Organizer - {{ organization_name }}</title>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link href="{% static 'assets/css/jquery.timepicker.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css">
 
@@ -24,7 +25,21 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://use.fontawesome.com/2cda8d07a1.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="{% static 'assets/js/jquery.timepicker.min.js' %}"></script>
         <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'assets/js/jquery.confirm.min.js' %}"></script>
+
+        <script>
+          $(function() {
+            $( ".datepicker" ).datepicker({
+              changeMonth: true,
+              changeYear: true,
+              yearRange: "1900:2017",
+              // You can put more options here.
+
+            });
+            $(".timepicker").timepicker();
+          });
+        </script>
     </body>
 </html>

@@ -36,6 +36,25 @@ table {
     margin: 0 auto;
 }
 
+.delete-x {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    text-align: center;
+    background: rgba(205, 16, 16, 1);
+    color: black;
+    transition: 0.1s ease-in-out 0s;
+}
+
+.delete-x:hover {
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out 0s;
+}
+
 
 
 /* Modal Styles*/
