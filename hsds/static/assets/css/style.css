@@ -263,7 +263,7 @@ body {
 }
 
 .hideBtn {
-    display: block;
+    display: none;
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -278,7 +278,7 @@ body {
     }
 
     .hideBtn {
-        display: none;
+        display: block;
     }
     .event-data {
         margin: 40px;
