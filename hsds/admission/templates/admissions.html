@@ -76,7 +76,7 @@
     <h1 class="admission-headers text-center">Income</h1>
     <table class="table expenses-table">
         <thead>
-            <th>Type <a href="{% url 'admission:add_income_type' event.id  %}"<i class="add-type fa fa-plus"></i></th>
+            <th>Type <a href="{% url 'admission:add_income' event.id  %}"<i class="add-type fa fa-plus"></i></th>
             <th>Notes</th>
             <th>Amount</th>
         </thead>
@@ -113,7 +113,7 @@
     <h1 class="admission-headers text-center">Expenses</h1>
     <table class="table expenses-table">
         <thead>
-            <th>Name <a href="{% url 'admission:add_expense_type' event.id  %}"<i class="add-type fa fa-plus"></i></th>
+            <th>Name <a href="{% url 'admission:add_expense' event.id  %}"<i class="add-type fa fa-plus"></i></th>
             <th>Notes</th>
             <th>Percent</th>
             <th>Cost</th>
