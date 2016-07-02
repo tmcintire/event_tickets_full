@@ -152,8 +152,48 @@ def delete_one(request, event_id, type_id):
     type_total = event.admission_type_total(type_id)
     tickets_total = event.tickets_total()
     tickets = event.count()
+    cash = event.cash
+    total_income = event.total_income()
+    total_revenue = event.tickets_total()
 
-    return JsonResponse({"count": count, "total": type_total, "tickets_total": tickets_total, "tickets_sold": tickets})
+    if total_income is None:
+        all_income = total_revenue
+    else:
+        all_income = total_income + total_revenue
+
+    for i in event.expenses():
+        if i.percent != 0:
+            i.cost = total_revenue * i.percent / 100
+            i.save()
+
+    total_expenses = event.total_expenses()
+
+    if total_revenue is None or total_expenses is None:
+        cash_remaining = cash
+    else:
+        cash_remaining = all_income + cash - total_expenses
+    expenses_query = event.expenses().values('cost')
+
+    expenses = json.dumps(list(expenses_query), cls=DjangoJSONEncoder)
+
+    data = {
+        "count": count,
+        "total": type_total,
+        "tickets_total": tickets_total,
+        "tickets_sold": tickets,
+        "cash": cash,
+        "cash_remaining": cash_remaining,
+        "total_revenue": total_revenue,
+        "total_expenses": total_expenses,
+        "all_income": all_income,
+        "expenses": expenses,
+        "result": "Successful",
+        "type_id": type_id,
+        "event_id": event_id,
+
+    }
+
+    return JsonResponse(data)
 
 
 @login_required()

@@ -38,5 +38,23 @@
 {% endif %}
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+        $("#id_percent").keyup(function(){
+            if ($(this).val()) {
+                $('#id_cost').hide()
+                $('#div_id_cost >.control-label').hide()
+            }
+            else {
+                $('#id_cost').show()
+                $('#div_id_cost >.control-label').show()
+            }
+        });
+    });
+
+</script>
+
 
 {% endblock %}

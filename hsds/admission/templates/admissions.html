@@ -106,8 +106,6 @@
 {% endif %}
 
 
-
-
 <!-- only admins can see this section -->
 {% if request.user.is_superuser %}
     <h1 class="admission-headers text-center">Expenses</h1>
@@ -255,10 +253,6 @@ function create_post() {
         success: function(json) {
             $('.modal').modal('hide');
             $('#number-tickets').val('1');
-            console.log(json); // log the returned json to the console
-            console.log("success"); // another sanity check
-            console.log(json['total_expenses'])
-            var cash = json['cash']
             $('#count-' + typeid).html(json['count']);
             $('#total-' + typeid).html("$" + json['total']);
             $('#total').html("$" + json['tickets_total']);
@@ -267,6 +261,7 @@ function create_post() {
             $('#cash-remaining').html("$" + json['cash_remaining']);
             $('#expenses-summary').html("$" + json['total_expenses']);
             $('#all-income').html("$" + json['all_income']);
+            $('#total-expenses').html("$" + json['total_revenue']);
             var expenses = json['expenses'];
             var new_expenses = JSON.parse(expenses);
             var count = 0
@@ -294,11 +289,25 @@ $(".delete-btn").click(function() {
         confirm: function(button) {
             $.get('/admission/' + eventid + '/deleteone/' + typeid, {
                 admission_type: typeid
-            }, function(data) {
-                $('#count-' + typeid).html(data['count']);
-                $('#total-' + typeid).html("$" + data['total']);
-                $('#total').html("$" + data['tickets_total']);
-                $('#attendance').html(data['tickets_sold']);
+            }, function(json) {
+                $('#count-' + typeid).html(json['count']);
+                $('#total-' + typeid).html("$" + json['total']);
+                $('#total').html("$" + json['tickets_total']);
+                $('#attendance').html(json['tickets_sold']);
+                $('#cash').html("$" + json['cash']);
+                $('#cash-remaining').html("$" + json['cash_remaining']);
+                $('#expenses-summary').html("$" + json['total_expenses']);
+                $('#all-income').html("$" + json['all_income']);
+                $('#total-expenses').html("$" + json['total_revenue']);
+                var expenses = json['expenses'];
+                var new_expenses = JSON.parse(expenses);
+                var count = 0
+                $('tr.exp_list td span').each(function() {
+                    var i = $(this).attr('id')
+                    var parsed = i.split('-')[1]
+                    $('#' + i).html('$' + new_expenses[count].cost);
+                    count++
+                });
             });
         },
     });
