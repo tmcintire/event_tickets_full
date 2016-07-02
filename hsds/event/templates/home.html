@@ -2,9 +2,21 @@
 
 
 {% block content %}
-
     <div class="loginBtnDiv">
-        <a class="text-center" href="{% url 'events' %}"><span class="loginBtn btn">Go to All Events</span></a>
+        <a class="text-center" href="#"><span class="loginBtn btn btn-primary">Enter</span></a>
     </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $('.loginBtnDiv').click(function() {
+        $('.loginBtnDiv').fadeOut(1000, function() {
+            window.location.href = "{% url "events" %}";
+
+        });
+
+    });
+
+
+</script>
 
 {% endblock %}

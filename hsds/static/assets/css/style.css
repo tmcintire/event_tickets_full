@@ -113,16 +113,20 @@ body {
     background: #fff;
     width: 30%;
     margin-top: 200px;
+    border-radius: 10px;
 }
 
 .loginBtn {
     text-align: center;
     width: 100%;
+    font-size: 3em;
+    transition: 0.3s ease-in-out 0s;
 }
 
 .loginBtn:hover {
     background: gray;
-    transition: .2s ease-in-out 0s;
+    transition: 0.3s ease-in-out 0s;
+    border-radius: 10px;
 }
 
 .loginBtn a {
