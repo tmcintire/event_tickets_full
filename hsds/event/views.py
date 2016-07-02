@@ -46,10 +46,8 @@ def add_event(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Task added!')
-                return HttpResponseRedirect('/event/all/')
+                return HttpResponseRedirect('/events/')
     else:
         form = EventForm()
-
-
 
     return render(request, 'add.html', locals())

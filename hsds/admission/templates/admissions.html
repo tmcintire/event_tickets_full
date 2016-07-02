@@ -149,8 +149,8 @@
 
         <tbody>
             <tr>
-                <td id="cash">{{ cash }}</td>
-                <td id="cash-remaining">{{ cash_remaining }}</td>
+                <td id="cash">${{ cash }}</td>
+                <td id="cash-remaining">${{ cash_remaining }}</td>
             </tr>
         </tbody>
 
@@ -239,9 +239,9 @@ function create_post() {
             $('#total-' + typeid).html("$" + json['total']);
             $('#total').html("$" + json['tickets_total']);
             $('#attendance').html(json['tickets_sold']);
-            $('#cash').html(json['cash']);
-            $('#cash-remaining').html(json['cash_remaining']);
-            $('#expenses-summary').html(json['total_expenses']);
+            $('#cash').html("$" + json['cash']);
+            $('#cash-remaining').html("$" + json['cash_remaining']);
+            $('#expenses-summary').html("$" + json['total_expenses']);
             $('#all-income').html("$" + json['all_income']);
             var expenses = json['expenses'];
             var new_expenses = JSON.parse(expenses);

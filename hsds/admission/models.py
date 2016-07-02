@@ -75,7 +75,6 @@ class Event(models.Model):
         else:
             return "No value"
 
-
     def __unicode__(self):
         return self.name
 
