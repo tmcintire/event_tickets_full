@@ -8,7 +8,7 @@
 <h3>{{ header }}</h3>
 <br />
     {% if "/events/" not in request.path %}
-    <a href="{%  url 'admission:admission' event.id %}"><button class="backBtn btn btn-primary">Back to Event</button></a>
+    <a href="{% url 'admission:admission' event.id %}"><button class="backBtn btn btn-primary">Back to Event</button></a>
     {%  endif %}
 <div class="row">
     <div class="col-md-6">

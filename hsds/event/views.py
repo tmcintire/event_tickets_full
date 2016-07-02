@@ -17,27 +17,25 @@ def home(request):
 def events_view(request):
     event = Event.objects.filter(date__gt=timezone.now()).order_by(('date'))
 
-
-
     return render(request, 'event_list.html', locals())
 
 
 def add_cash(request, event_id):
-    instance = get_object_or_404(Event, pk=event_id)
+    event = get_object_or_404(Event, pk=event_id)
     if request.POST:
-            form = CashForm(request.POST, instance=instance)
+            form = CashForm(request.POST, instance=event)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Modified!')
                 return HttpResponseRedirect('/events/')
     else:
-        form = CashForm(instance=instance)
+        form = CashForm(instance=event)
 
     header = "You must enter a starting cash box amount"
 
     return render_to_response("add.html", {
         'form': form,
-        'instance': instance,
+        'event': event,
         'header': header,
     }, context_instance=RequestContext(request))
 
