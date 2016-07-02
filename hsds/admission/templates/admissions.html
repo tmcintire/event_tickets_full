@@ -12,7 +12,7 @@
 <div class="admission-wrapper">
 <table class="table admission-table">
     <thead>
-        <th>Type</th>
+        <th style="width: 15%">Type <a href="{% url 'admission:add_type' event.id  %}"<i class="add-type fa fa-plus"></i></th>
         <th>Price</th>
         <th class="hideable">Add</th>
         {% if request.user.is_superuser %}
@@ -61,7 +61,7 @@
             {% endif %}
             <td class="count" id="attendance">{{ event.count }}</td>
             {% if request.user.is_superuser %}
-            <td class="totals" id="total">${{ total_revenue }}</td>
+                    <td class="totals" id="total">${{ total_revenue }}</td>
             {% endif %}
 
         </tr>
@@ -76,14 +76,14 @@
     <h1 class="admission-headers text-center">Income</h1>
     <table class="table expenses-table">
         <thead>
-            <th>Type</th>
+            <th>Type <a href="{% url 'admission:add_income_type' event.id  %}"<i class="add-type fa fa-plus"></i></th>
             <th>Notes</th>
             <th>Amount</th>
         </thead>
         <tbody id="expense-count">
         <tr>
             <td colspan="2">Income from Admission</td>
-            <td id="total-expenses">${{ total_revenue }}</td>
+                <td id="total-expenses">${{ total_revenue }}</td>
         </tr>
 
         {% for i in income %}
@@ -96,7 +96,8 @@
 
         <tr>
             <td colspan="2">Total Income for Event</td>
-            <td id="all-income">${{ all_income }}</td>
+
+                <td id="all-income">${{ all_income }}</td>
         </tr>
 
         </tbody>
@@ -112,7 +113,7 @@
     <h1 class="admission-headers text-center">Expenses</h1>
     <table class="table expenses-table">
         <thead>
-            <th>Name</th>
+            <th>Name <a href="{% url 'admission:add_expense_type' event.id  %}"<i class="add-type fa fa-plus"></i></th>
             <th>Notes</th>
             <th>Percent</th>
             <th>Cost</th>
@@ -129,7 +130,7 @@
             {% endfor %}
         <tr id ="total-expenses-tr">
             <td colspan="3">Total Expenses</td>
-            <td id="expenses-summary">${{ event.total_expenses }}</td>
+            <td id="expenses-summary">${{ total_expenses }}</td>
 
         </tr>
 

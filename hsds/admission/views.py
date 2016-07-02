@@ -30,6 +30,9 @@ def admission_types(request, event_id):
     # runs the tickets_total() method from the Event model which gets all the tickets sold for the event
     total_revenue = event.tickets_total()
 
+    if total_revenue is None:
+        total_revenue = 0
+
     if total_income is None:
         all_income = total_revenue
     else:
@@ -37,6 +40,10 @@ def admission_types(request, event_id):
 
     cash = event.cash
     total_expenses = event.total_expenses()
+
+    if total_expenses is None:
+        total_expenses = 0
+
     if total_revenue is None or total_expenses is None:
         cash_remaining = cash
     else:

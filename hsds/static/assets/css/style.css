@@ -56,6 +56,16 @@ table {
 }
 
 
+.add-type {
+    color: royalblue;
+}
+
+.add-type:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: royalblue;
+}
+
 
 /* Modal Styles*/
 .modal-content {
