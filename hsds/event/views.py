@@ -15,7 +15,7 @@ def home(request):
 
 
 def events_view(request):
-    event = Event.objects.filter(date__gt=timezone.now()).order_by(('date'))
+    event = Event.objects.filter(date__gte=timezone.now()).order_by(('date'))
 
     return render(request, 'event_list.html', locals())
 

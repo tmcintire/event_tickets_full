@@ -25,6 +25,7 @@ class Event(models.Model):
     date = models.DateField(blank=True, null=True)
     time = models.TimeField(blank=True, null=True)
     cash = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True)
+    admin_fee = models.DecimalField(decimal_places=2, max_digits=10, blank=True, null=True, default=0)
 
     def tickets(self):
         return self.tickets_set.all()

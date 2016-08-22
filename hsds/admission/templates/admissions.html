@@ -31,7 +31,7 @@
         <td>{{ i.type }}</td>
         <td>${{ i.price }}</td>
         <td class="add hideable">
-            <button data-toggle="modal" data-target="#{{ i.id }}" class="btn btn-success add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
+            <button class="btn btn-success add-btn" data-typeid="{{ i.id }}" id="add-{{ i.id }}">
             <i class="fa fa-plus -square fa-3x"></i></button>
         </td>
         <td class="del hideable">
@@ -126,6 +126,12 @@
                 <td class="expenses-cost"><span id="expenses-{{ i.id }}">${{ i.cost }}</span></td>
             </tr>
             {% endfor %}
+            {% if admin_fee %}
+            <tr>
+                <td colspan="3">Administrative Fee</td>
+                <td class="admin-fee">${{ admin_fee }}</td>
+            </tr>
+            {% endif %}
         <tr id ="total-expenses-tr">
             <td colspan="3">Total Expenses</td>
             <td id="expenses-summary">${{ total_expenses }}</td>
@@ -156,56 +162,7 @@
 
 <!-- End Admin only section -->
 
-
-
-<div class="modal tickets-modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">How many tickets?</h4>
-      </div>
-      <div class="modal-body">
-          <form id="ticket-form" method="post">{% csrf_token %}
-            <div class="styled-select">
-                <select id="number-tickets" class="1-100"></select>
-            </div>
-            <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Submit">
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
 </div>
-
-
-
-<div class="modal tickets-modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">How many tickets?</h4>
-      </div>
-      <div class="modal-body">
-          <form id="ticket-form" method="post">{% csrf_token %}
-            <div class="styled-select">
-                <select id="number-tickets" class="1-100"></select>
-            </div>
-            <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Submit">
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
 <script>
 
 $(document).ready(function() {
@@ -213,12 +170,6 @@ $(document).ready(function() {
 
 });
 
-    $(function() {
-    var $select = $(".1-100");
-    for (i = 1; i <= 100; i++) {
-        $select.append($('<option></option>').val(i).html(i))
-    }
-});
 $(".hideBtn").click(function() {
     $('.hideable').toggle();
     if ($(this).html() == "Hide Add/Remove Buttons") {
@@ -229,14 +180,14 @@ $(".hideBtn").click(function() {
 });
 $(".add-btn").click(function() {
     typeid = $(this).attr("data-typeid");
-    $('.modal').attr('id', typeid)
     eventid = "{{ event.id }}"
     expensecount = $('#expense-count').children('tr').not('#total-expenses-tr').length;
+    create_post();
 });
 $('#ticket-form').on('submit', function(event) {
     event.preventDefault();
     console.log("form submitted!") // sanity check
-    create_post();
+    
 });
 
 function create_post() {

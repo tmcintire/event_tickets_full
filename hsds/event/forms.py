@@ -9,7 +9,7 @@ class EventForm(forms.ModelForm):
             'date': forms.DateInput(attrs={'class': 'datepicker'}),
             'time': forms.TimeInput(attrs={'class': 'timepicker'}),
         }
-        fields = ('organization', 'name', 'type', 'date', 'time', 'cash')
+        fields = ('organization', 'name', 'type', 'date', 'time', 'cash', 'admin_fee')
 
 
 class CashForm(forms.ModelForm):

@@ -30,7 +30,9 @@
 # Python Files #
 ######################
 *.idea
-coainventory/*.pyc
+*.pyc
+admission/*.pyc
+event/*.pyc
 
 # Databases #
 ######################
@@ -44,4 +46,3 @@ coainventory/*.pyc
 .Trashes
 ehthumbs.db
 Thumbs.db
-.gitignore

@@ -7,7 +7,7 @@
 
 <h3>{{ header }}</h3>
 <br />
-    {% if "/events/" not in request.path %}
+    {% if "/events/" not in request.path and "/cash/" not in request.path %}
     <a href="{% url 'admission:admission' event.id %}"><button class="backBtn btn btn-primary">Back to Event</button></a>
     {%  endif %}
 <div class="row">
@@ -40,8 +40,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-
 $(document).ready(function(){
+        $("#add_form input:text, #add_form textarea").first().focus();
         $("#id_percent").keyup(function(){
             if ($(this).val()) {
                 $('#id_cost').hide()

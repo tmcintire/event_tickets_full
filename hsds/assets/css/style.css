@@ -1,0 +1,288 @@
+.admission-table,.expenses-table,.cashbox-table {
+    border: 2px solid #000;
+}
+
+.admission-table td,.expenses-table td,.cashbox-table td {
+    border: 2px solid #000;
+    font-size: 1.5em;
+}
+
+.admission-table th,.expenses-table th,.cashbox-table th {
+    border: 2px solid #000;
+    font-size: 1.8em;
+}
+
+.admission-table, .expenses-table, .cashbox-table {
+    box-shadow: 2px 2px 5px 2px #000;
+}
+
+.admission-content {
+    height: 74px;
+}
+
+.admission-wrapper {
+    display: none;
+}
+
+table {
+    background: #fff;
+}
+
+.tickets-modal {
+    margin: 0 auto;
+}
+
+.confirmation-modal {
+    margin: 0 auto;
+}
+
+.delete-x {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    text-align: center;
+    background: rgba(205, 16, 16, 1);
+    color: black;
+    transition: 0.1s ease-in-out 0s;
+}
+
+.delete-x:hover {
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out 0s;
+}
+
+
+.add-type {
+    color: royalblue;
+}
+
+.add-type:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    color: royalblue;
+}
+
+
+/* Modal Styles*/
+.modal-content {
+    width: 300px;
+}
+
+.modal-body {
+    font-size: 1.4em;
+}
+
+.modal {
+ overflow-y: auto;
+}
+
+.modal-open {
+ overflow: auto;
+}
+/* End Modal Styles*/
+
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin-top: 50px;
+/*background: url('../img/hsvwall.jpg') center fixed;*/
+    overflow-y: scroll;
+}
+
+.event-list {
+    margin-top: 50px;
+}
+
+.styled-select select {
+    background: lightgray;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    font-size: 1.4em;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+#reports {
+    font-size: 1.3em;
+}
+
+.title {
+    color: #fff;
+}
+
+.loginBtnDiv {
+    margin: 0 auto;
+    background: #fff;
+    width: 30%;
+    margin-top: 200px;
+    border-radius: 10px;
+}
+
+.loginBtn {
+    text-align: center;
+    width: 100%;
+    font-size: 3em;
+    transition: 0.3s ease-in-out 0s;
+}
+
+.loginBtn:hover {
+    background: gray;
+    transition: 0.3s ease-in-out 0s;
+    border-radius: 10px;
+}
+
+.loginBtn a {
+    color: #fff;
+}
+
+.backBtn {
+    color: #fff;
+    font-size: 1.4em;
+}
+
+.backBtn {
+    margin-bottom: 30px;
+}
+
+#add_form {
+    color: #777;
+    font-size: 1.5em;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 75%;
+    padding: 20px;
+    box-shadow: 2px 2px 5px 1px #777;
+}
+
+#add_form .btn {
+    color: #fff;
+    font-size: 1em;
+}
+
+#add_form input {
+    color: #000;
+}
+
+#add-data {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 75%;
+    background: #fff;
+    font-size: 1.5em;
+    color: #777;
+    box-shadow: 2px 2px 5px 1px #777;
+}
+
+.event-data {
+    background: #fff;
+    padding: 20px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px 1px #777;
+}
+
+.navbar-default {
+    height: 50px;
+    border: 0;
+    background: #000;
+}
+
+.navbar-default li a {
+    color: #fff !important;
+}
+
+.navbar .navbar-brand {
+    color: #E3EDEE;
+    font-size: 3.5em;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand:hover {
+    color: #E3EDEE;
+    cursor: default;
+}
+
+.navbar li > a {
+    font-size: 1.3em;
+}
+
+.navbar-default .navbar-nav > li > a {
+    margin-left: 20px;
+}
+
+.navbar .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-collapse {
+    background-color: black;
+    color: #fff;
+}
+
+.navbar .navbar-nav > li > a:hover,.navbar .navbar-collapse .navbar-nav .dropdown li:hover,.navbar .navbar-collapse .navbar-nav .dropdown a:hover {
+    background-color: gray;
+    color: #fff;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown ul {
+    background-color: #555;
+    color: #fff;
+    width: 270px;
+}
+
+.dropdown-toggle:active,.open .dropdown-toggle {
+    background: #555 !important;
+    color: #fff !important;
+}
+
+.navbar .navbar-default .dropdown > a:hover {
+    background: #555;
+}
+
+.admission-headers {
+    color: #777;
+}
+
+.admission-table th {
+    font-weight: 700;
+}
+
+.add,.del {
+    width: 12%;
+}
+
+.hideBtn {
+    display: none;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .admission-table th {
+        font-size: 1.6em;
+        font-weight: 700;
+    }
+
+    .add,.del {
+        width: 12%;
+    }
+
+    .hideBtn {
+        display: block;
+    }
+    .event-data {
+        margin: 40px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 5px 1px #777;
+    }
+}
